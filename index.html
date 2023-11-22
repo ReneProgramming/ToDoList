@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <script src="main.js"></script>
 </head>
 <body>
     <div id="app">
         <h1>To Do List</h1>
 
         <form id="addTaskForm">
-            <label for="taskDescription">Task Description:</label>
+            <label for="taskDescription">Enter task:</label>
             <input type="text" id="taskDescription" required>
             <button type="button" onclick="addTask()">Add Task</button>
         </form>
@@ -19,6 +20,5 @@
         <ul id="taskList"></ul>
     </div>
 
-    <script src="main.js"></script>
 </body>
 </html>
