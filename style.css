@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#app {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: red; /* Highlight completed tasks in red */
+}
+
+.incomplete {
+    background-color: yellow; /* Highlight incomplete tasks in yellow */
+    cursor: pointer;
+}
