@@ -1,5 +1,3 @@
-
-
 class ToDo {  
     constructor(text) {
         this.text = text;
@@ -26,23 +24,23 @@ document.addEventListener('DOMContentLoaded', function () {
         taskDescriptionInput.value = ''; // Clear the input field
     }
 
-    function markTaskComplete(checkbox, index) {
-        tasks[index].isComplete = checkbox.checked;
-        renderTasks();
-    }
-
     function renderTasks() {
         taskList.innerHTML = '';
 
         tasks.forEach((task, index) => {
             const taskItem = document.createElement('li');
             taskItem.innerHTML = `
-                <input type="checkbox" onchange="markTaskComplete(this, ${index})" ${task.isComplete ? 'checked' : ''}>
-                <span class="${task.isComplete ? 'completed' : ''}">${task.text}</span>
+                <span class="${task.isComplete ? 'completed' : 'incomplete'}" onclick="toggleTaskStatus(${index})">${task.text}</span>
             `;
             taskList.appendChild(taskItem);
         });
     }
 
+    function toggleTaskStatus(index) {
+        tasks[index].isComplete = !tasks[index].isComplete;
+        renderTasks();
+    }
+
     window.addTask = addTask;
+    window.toggleTaskStatus = toggleTaskStatus;
 });
